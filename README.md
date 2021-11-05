@@ -1,21 +1,13 @@
-# Ruby Starter Project
+~тз на минималках~
+(*´ー`)旦 旦(￣ω￣*)  счастливый Валера с маргиналами
+( ˘▽˘)っ♨  Валера выпивает глинтвейн (которое вино с сериалами
+(ˇ▽ˇ)ノ♪♬♫  Валера поёт в метро
+(￣ρ￣)..zzZZ Валера спит
+(；￣Д￣) идёт на работу
+☆ﾐ(o*･ω･)ﾉ идёт в бар
+(─‿‿─) созерцает природу
 
-## Install
 
-```bash
-gem install bundler
-bundle install
-```
-
-## Run test
-
-```bash
-rspec
-```
-
-## Run rubocop
-
-```bash
-rubocop
-rubocop -a # Auto-correct offenses
-```
+Эмоции Валеры
+(ᵔ◡ᵔ) Веселье (cheerfulness)
+(￣ ￣|||)Усталость (fatigue)

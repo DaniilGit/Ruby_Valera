@@ -9,6 +9,10 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+*.lock
+.bundle
+Gemfile.lock
+.editorconfig
 
 # Used by dotenv library to load environment variables.
 # .env
