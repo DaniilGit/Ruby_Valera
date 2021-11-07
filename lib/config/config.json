@@ -1,0 +1,99 @@
+{
+  "initial": {
+    "health": 80,
+    "mana": 90,
+    "happiness": 50,
+    "fatigue": 3,
+    "money": 1500
+  },
+  "actions": [
+    {
+      "name": "work",
+      "description": "Go to work",
+      "effects": {
+        "happiness": -5,
+        "mana": -30,
+        "money": 100,
+        "fatigue": 70
+      }
+    },
+    {
+      "name": "nature",
+      "description": "Enjoy nature",
+      "effects": {
+        "happiness": 1,
+        "mana": -10,
+        "fatigue": 10
+      }
+    },
+    {
+      "name": "wine and series",
+      "description": "Drink wine and watch the series",
+      "effects": {
+        "health": -5,
+        "happiness": -1,
+        "mana": 30,
+        "money": -20,
+        "fatigue": 10
+      }
+    },
+    {
+      "name": "drink",
+      "description": "Go to pub",
+      "effects": {
+        "health": -10,
+        "happiness": 1,
+        "mana": 60,
+        "money": -100,
+        "fatigue": 40
+      }
+    },
+    {
+      "name": "drink up",
+      "description": "Drink with marginalized personalities",
+      "effects": {
+        "health": -80,
+        "happiness": 5,
+        "mana": 90,
+        "money": -150,
+        "fatigue": 80
+      }
+    },
+    {
+      "name": "sing",
+      "description": "Sing on the subway",
+      "effects": {
+        "happiness": 1,
+        "mana": 10,
+        "money": 10,
+        "fatigue": 20
+      }
+    },
+    {
+      "name": "sleep",
+      "description": "Sleep",
+      "effects": {
+        "mana": -50,
+        "fatigue": -70
+      },
+      "conditions": [
+        {
+          "parameter": "mana",
+          "operator": "<",
+          "value": 30,
+          "effects": {
+            "health": 90
+          }
+        },
+        {
+          "parameter": "mana",
+          "operator": ">",
+          "value": 70,
+          "effects": {
+            "happiness": -3
+          }
+        }
+      ]
+    }
+  ]
+}
