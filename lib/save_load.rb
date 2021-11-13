@@ -1,25 +1,21 @@
-require 'json'
+class SaveOrLoad
+  FILENAME = 'save.game'
+  PARAMETERS = %w[health mana happiness fatigue money]
 
-class SaveLoad
-  FILENAME = 'save_game.json'
-
-  def data_serialize(character)
-    data = [
-      'health' => character.health, 
-      'mana' => character.mana,
-      'fatigue' => character.fatigue,
-      'happiness' => character.happiness,
-      'money' => character.money
-    ]
+  def self.save(character)
+    File.open(FILENAME, 'w') unless File.zero?(FILENAME)
+    PARAMETERS.each do |param|
+      File.open(FILENAME, 'a'){ |file| file.write((character.send param).to_s + ' ') }
+    end
   end
 
-  def save(character)
-    File.write(FILENAME, JSON.dump(data_serialize(character)))
-  end
-
-  def load(character)
-    file = File.read(FILENAME)
-    data = JSON.parse(file)
-    data.each { |i| @character.send("#{i[0].to_sym}=", i[1]) }
+  def self.load(character)
+    parameters = File.open(FILENAME, 'r'){ |file| file.read }
+    parameters = parameters.split(' ')
+    i = 0
+    PARAMETERS.each do |param|
+      character.send("#{param}=", parameters[i].to_i)
+      i += 1
+    end
   end
 end
