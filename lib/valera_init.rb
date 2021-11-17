@@ -13,7 +13,7 @@ class ValeraInit
     health <= 0 || cheerfulness <= -10
   end
 
-  def health!(value)
+  def health(value)
     @health = if value > 100
                 100
               elsif value.negative?
