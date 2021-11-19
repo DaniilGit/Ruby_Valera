@@ -1,8 +1,6 @@
 require_relative '../lib/valera_init'
 require 'rspec'
 
-require './lib/print_status'
-
 describe ValeraInit do
   let(:valera) { ValeraInit.new(health: health, mana: mana, happiness: happiness) }
   let(:health) { 0 }
