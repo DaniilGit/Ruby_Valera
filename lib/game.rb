@@ -29,8 +29,6 @@ class Game
       elif value == 'l'
       SaveOrLoad.load(@character)
       IOAdapter.instance.output 'Download was successful.'
-    else
-      IOAdapter.instance.output('Wrong command')
     end
   end
 end
