@@ -4,7 +4,7 @@ require 'open-uri'
 Dir['./action/*.rb'].each { |file| require_relative file }
 
 class ConfigLoader
-  CONFIG_FILENAME = 'config.yml'.freeze
+  CONFIG_FILENAME = './config/config.yml'.freeze
 
   def initialize(character, actions)
     @character = character
