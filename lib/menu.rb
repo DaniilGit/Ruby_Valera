@@ -11,10 +11,10 @@ class Menu
     beginning = IOAdapter.instance.input "\n[CHOOSE THE SOLUTION]: "
     case beginning
     when '1'
-      @game.run
+      @game.game_run
     when '2'
       SaveOrLoad.load(@character)
-      @game.run
+      @game.game_run
     end
   end
 end

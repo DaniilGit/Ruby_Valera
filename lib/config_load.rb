@@ -1,5 +1,9 @@
 require 'yaml'
 require 'open-uri'
+require_relative './action/action'
+require_relative './action/effect'
+require_relative './action/cond'
+require_relative './action/add_cond'
 
 Dir['./action/*.rb'].each { |file| require_relative file }
 

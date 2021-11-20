@@ -12,8 +12,8 @@ class Application
 
   def run
     character = ValeraInit.new
-    ConfigLoader.new(character, actions)
-    actions_pool = ActionsPool.new(actions)
+    ConfigLoader.new(character, @actions)
+    actions_pool = ActionsPool.new(@actions)
     Menu.new(character, actions_pool).beginning
   end
 end
