@@ -1,4 +1,5 @@
 require_relative 'print_game'
+require_relative 'save_load'
 
 class Game
   def initialize(character, actions_pool)
@@ -26,9 +27,12 @@ class Game
     if value == 's'
       SaveOrLoad.save(@character)
       IOAdapter.instance.output('Saving was successful.')
-      elif value == 'l'
+    elsif value == 'l'
       SaveOrLoad.load(@character)
       IOAdapter.instance.output 'Download was successful.'
+    elsif value == 'q'
+      IOAdapter.instance.output 'See you soon!'
+      exit
     end
   end
 end

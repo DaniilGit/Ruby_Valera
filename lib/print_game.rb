@@ -13,6 +13,7 @@ def print_actions
   actions.each { |key, value| IOAdapter.instance.output("[#{key}] - #{value.name} (#{value.description})") }
   IOAdapter.instance.output 'Enter "s" to save the data'
   IOAdapter.instance.output 'Enter "l" to load the data'
+  IOAdapter.instance.output 'Enter "q" to exit the game'
 end
 
 def print_indicators

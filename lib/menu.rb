@@ -6,8 +6,8 @@ class Menu
 
   def beginning
     IOAdapter.instance.output "[WELCOME]\n
-    '1' - Start new game\n
-    '2' - Continue game\n"
+    [1] - Start new game\n
+    [2] - Continue game\n"
     beginning = IOAdapter.instance.input "\n[CHOOSE THE SOLUTION]: "
     case beginning
     when '1'
