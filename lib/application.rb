@@ -7,7 +7,7 @@ require_relative 'game'
 
 class Application
   def initialize 
-    actions
+    @actions = {}
   end
 
   def run

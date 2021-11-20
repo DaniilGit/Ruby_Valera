@@ -1,4 +1,5 @@
 class Game
+  INDICATORS = %w[health mana happiness fatigue money].freeze
   def initialize(character, actions_pool)
     @character = character
     @actions_pool = actions_pool

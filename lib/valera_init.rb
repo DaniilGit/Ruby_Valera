@@ -1,19 +1,20 @@
 class ValeraInit
-  attr_reader :health, :mana, :cheerfulness, :fatigue, :money
+  attr_reader :health, :mana, :happiness, :fatigue
+  attr_writer :money
 
-  def initialize(health: 100, mana: 0, cheerfulness: 0, fatigue: 0, money: 100)
-    health!(health)
-    mana!(mana)
-    cheerfulness!(cheerfulness)
-    fatigue!(fatigue)
-    money!(money)
+  def initialize(health: 100, mana: 0, happiness: 0, fatigue: 0, money: 100)
+    self.health = health
+    self.mana = mana
+    self.happiness = happiness
+    self.fatigue = fatigue
+    self.money = money
   end
 
   def dead?
-    health <= 0 || cheerfulness <= -10
+    health <= 0 || happiness <= -10
   end
 
-  def health(value)
+  def health=(value)
     @health = if value > 100
                 100
               elsif value.negative?
@@ -23,7 +24,7 @@ class ValeraInit
               end
   end
 
-  def mana!(value)
+  def mana=(value)
     @mana = if value > 100
               100
             elsif value.negative?
@@ -33,17 +34,17 @@ class ValeraInit
             end
   end
 
-  def cheerfulness!(value)
-    @cheerfulness = if value > 10
-                      10
-                    elsif value < -10
-                      -10
-                    else
-                      value
-                    end
+  def happiness=(value)
+    @happiness = if value > 10
+                   10
+                 elsif value < -10
+                   -10
+                 else
+                   value
+                 end
   end
 
-  def fatigue!(value)
+  def fatigue=(value)
     @fatigue = if value > 100
                  100
                elsif value.negative?
@@ -53,7 +54,7 @@ class ValeraInit
                end
   end
 
-  def money!(money)
+  def money=(money)
     @money = money
   end
 end

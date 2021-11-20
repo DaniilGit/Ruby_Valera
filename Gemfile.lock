@@ -49,6 +49,7 @@ GEM
 PLATFORMS
   x64-mingw32
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   byebug
@@ -59,4 +60,4 @@ DEPENDENCIES
   simplecov
 
 BUNDLED WITH
-   2.2.27
+   2.2.29
