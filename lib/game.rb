@@ -24,13 +24,14 @@ class Game
   end
 
   def other_actions(value)  
-    if value == 's'
+    case value
+    when 's'
       SaveOrLoad.save(@character)
       IOAdapter.instance.output('Saving was successful.')
-    elsif value == 'l'
+    when 'l'
       SaveOrLoad.load(@character)
       IOAdapter.instance.output 'Download was successful.'
-    elsif value == 'q'
+    when 'q'
       IOAdapter.instance.output 'See you soon!'
       exit
     end
