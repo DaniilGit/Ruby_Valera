@@ -4,11 +4,11 @@ class IOAdapter
   include Singleton
 
   def output(msg)
-    STDOUT.puts msg
+    $stdout.puts msg
   end
 
   def input(msg = '')
     output(msg)
-    STDIN.gets.chomp
+    $stdin.gets.chomp
   end
 end

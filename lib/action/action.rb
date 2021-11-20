@@ -1,7 +1,7 @@
 class Action
   attr_accessor :name, :description, :effects, :conds, :add_conds
 
-  def initialize(name:, description: '', conds:, effects:, add_conds: [])
+  def initialize(name:, conds:, effects:, description: '', add_conds: [])
     self.name = name
     self.description = description
     self.effects = effects

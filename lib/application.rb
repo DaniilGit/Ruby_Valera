@@ -1,12 +1,14 @@
-require_relative 'valera_init.rb'
-require_relative 'config_load.rb'
-require_relative 'menu.rb'
-require_relative 'actions_pool.rb'
-require_relative 'io_adapter.rb'
-require_relative 'game.rb'
+require_relative 'valera_init'
+require_relative 'config_load'
+require_relative 'menu'
+require_relative 'actions_pool'
+require_relative 'io_adapter'
+require_relative 'game'
 
 class Application
-  actions = {}
+  def initialize 
+    actions
+  end
 
   def run
     character = ValeraInit.new
