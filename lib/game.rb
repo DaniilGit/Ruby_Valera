@@ -22,10 +22,10 @@ class Game
 
   def other_actions(value)  
     if value == 's'
-        # command_saveGame
+      SaveOrLoad.save(@character)
       IOAdapter.output('Saving was successful.')
       elif value == 'l'
-      #  command_loadGame
+      SaveOrLoad.load(@character)
       IOAdapter.output 'Download was successful.'
     else
       IOAdapter.output('Wrong command')
