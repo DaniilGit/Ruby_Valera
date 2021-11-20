@@ -1,6 +1,5 @@
 class ValeraInit
-  attr_reader :health, :mana, :happiness, :fatigue
-  attr_writer :money
+  attr_reader :health, :mana, :happiness, :fatigue, :money
 
   def initialize(health: 100, mana: 0, happiness: 0, fatigue: 0, money: 100)
     self.health = health
