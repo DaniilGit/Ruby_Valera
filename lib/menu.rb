@@ -13,7 +13,7 @@ class Menu
     when '1'
       @game.game_run
     when '2'
-      SaveOrLoad.load(@character)
+      SaveOrLoad.new.load(@character)
       @game.game_run
     end
   end

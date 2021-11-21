@@ -26,10 +26,10 @@ class Game
   def other_actions(value)  
     case value
     when 's'
-      SaveOrLoad.save(@character)
+      SaveOrLoad.new.save(@character)
       IOAdapter.instance.output('Saving was successful.')
     when 'l'
-      SaveOrLoad.load(@character)
+      SaveOrLoad.new.load(@character)
       IOAdapter.instance.output 'Download was successful.'
     when 'q'
       IOAdapter.instance.output 'See you soon!'

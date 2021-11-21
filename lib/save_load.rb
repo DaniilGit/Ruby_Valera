@@ -1,20 +1,22 @@
 class SaveOrLoad
-  FILENAME = 'save.game'.freeze
-  PARAMETERS = %w[health mana happiness fatigue money].freeze
+  def initialize(filename = 'save_game.txt')
+    @filename = filename
+    @parameters = %w[health mana happiness fatigue money]
+  end
 
-  def self.save(character)
-    File.open(FILENAME, 'w') unless File.zero?(FILENAME)
-    PARAMETERS.each do |param|
-      File.open(FILENAME, 'a') { |file| file.write("#{character.send param} ") }
+  def save(character)
+    File.open(@filename, 'w') unless File.zero?(@filename)
+    @parameters.each do |param|
+      File.open(@filename, 'a') { |file| file.write("#{character.send param} ") }
     end
   end
 
-  def self.load(character)
-    parameters = File.open(FILENAME, 'r', &:read)
-    parameters = parameters.split
+  def load(character)
+    new_parameters = File.open(@filename, 'r', &:read)
+    new_parameters = new_parameters.split
     i = 0
-    PARAMETERS.each do |param|
-      character.send("#{param}=", parameters[i].to_i)
+    @parameters.each do |param|
+      character.send("#{param}=", new_parameters[i].to_i)
       i += 1
     end
   end

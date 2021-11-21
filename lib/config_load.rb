@@ -5,24 +5,22 @@ require_relative './action/effect'
 require_relative './action/cond'
 require_relative './action/add_cond'
 
-Dir['./action/*.rb'].each { |file| require_relative file }
-
 class ConfigLoader
   CONFIG_FILENAME = './lib/config/config.yml'.freeze
 
   def initialize(character, actions)
     @character = character
     @actions = actions
-    load_configuration
   end
-
-  private
 
   def load_configuration
     data = YAML.load_file(CONFIG_FILENAME)
     change_data data['initial'] if data.include?('initial')
     build_actions data['actions'] if data.include?('actions')
+    data
   end
+
+  private
 
   def change_data(data)
     data.each { |i| @character.send("#{i['parameter'].to_sym}=", + i['value']) }
@@ -31,6 +29,8 @@ class ConfigLoader
   def build_actions(data)
     i = 1
     data.each do |act|
+      next if act['effects'].nil?
+
       new_act = Action.new name: act['name'],
                            description: act['description'],
                            effects: act['effects'].map { |eff| build_effect(eff) },
