@@ -2,10 +2,8 @@ require_relative '../lib/game'
 require 'rspec'
 
 RSpec.describe Game do
-  let(:valera) { ValeraInit.new(100, 0, 0, 0, 0) }
-  let(:valera_dead) { ValeraInit.new(-9, -9, -9, -9, -9) }
+  let(:valera) { ValeraInit.new }
   let(:game) { Game.new(valera, data) }
-  let(:game_dead) { Game.new(valera_dead, data) }
 
   describe '#correct_input?' do
     context 'when input is correct' do
