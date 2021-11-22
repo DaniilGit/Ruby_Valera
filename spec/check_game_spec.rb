@@ -3,7 +3,7 @@ require 'rspec'
 
 RSpec.describe Game do
   let(:valera) { ValeraInit.new }
-  subject { Config.Loader.new(valera, {}) }
+  subject { ConfigLoader.new(valera, {}) }
   let(:data) { subject.load_configuration }
   let(:game) { Game.new(valera, data) }
 
