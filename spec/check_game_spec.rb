@@ -1,4 +1,6 @@
-require '../lib/game'
+require_relative '../lib/game'
+require 'rspec'
+
 RSpec describe Game do
   let(:valera_live) { Valera.new(100, 0, 0, 0, 0) }
   let(:valera_dead) { Valera.new(-10, -10, -10, -10, -10) }
