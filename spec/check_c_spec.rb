@@ -9,7 +9,11 @@ describe ValeraInit do
   describe '#dead?' do
     subject { valera.dead? }
     context 'when the valera health < 0' do
-      let(:health) { -5 }
+      let(:health) { -10 }
+      it { is_expected.to be true }
+    end
+    context 'when the valera happiness < 0' do
+      let(:happiness) { -15 }
       it { is_expected.to be true }
     end
 
