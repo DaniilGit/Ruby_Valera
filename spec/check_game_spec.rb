@@ -9,9 +9,6 @@ RSpec.describe Game do
 
   describe '#correct_input?' do
     context 'when input is correct' do
-      context 'when choose action' do
-        it { expect(game.correct_input?('1')).to be_truthy }
-      end
       context 'when load' do
         it { expect(game.other_actions('l')).to be_truthy }
       end
