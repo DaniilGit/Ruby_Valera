@@ -1,4 +1,4 @@
-class Menu
+class MainMenu
   def initialize(character, actions)
     @character = character
     @game = Game.new(character, actions)

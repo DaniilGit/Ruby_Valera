@@ -1,8 +1,9 @@
 require_relative 'valera_init'
 require_relative 'config_load'
-require_relative 'menu'
+require_relative 'main_menu'
 require_relative 'actions_pool'
 require_relative 'io_adapter'
+require_relative 'game_menu'
 require_relative 'game'
 
 class Application
@@ -14,6 +15,6 @@ class Application
     character = ValeraInit.new
     ConfigLoader.new(character, @actions).load_configuration
     actions_pool = ActionsPool.new(@actions)
-    Menu.new(character, actions_pool).beginning
+    MainMenu.new(character, actions_pool).beginning
   end
 end

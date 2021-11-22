@@ -29,6 +29,10 @@ describe ConfigLoader do
     context 'when condition is not empty' do
       it { expect(subject.send(:build_condition, data['actions'][0])).to_not eq([]) }
     end
+
+    context 'when condition is empty' do
+      it { expect(subject.send(:build_condition, {})).to eq([]) }
+    end
   end
 
   describe '#build_effect' do

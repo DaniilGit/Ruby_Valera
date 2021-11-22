@@ -1,7 +1,7 @@
 require_relative '../lib/valera_init'
 require_relative '../lib/save_load'
 
-describe SaveOrLoad do
+RSpec.describe SaveOrLoad do
   let(:valera) { ValeraInit.new }
   subject { SaveOrLoad.new('./spec/test-data/save_test_game.txt') }
   parameters = %w[health mana happiness fatigue money]
