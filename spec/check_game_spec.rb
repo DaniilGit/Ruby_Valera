@@ -9,7 +9,7 @@ RSpec describe Game do
   describe '#correct_input?' do
     context 'dead' do
       subject { Game.new(valera_dead, data).game_run }
-      it { is_expected.to eq "\x1B[31m \nValera is dead ;-; \x1B[0m \n"}
+      it { is_expected.to eq "\x1B[31m \nValera is dead ;-; \x1B[0m \n" }
     end
     context 'when input is correct' do
       context 'when choose action' do
