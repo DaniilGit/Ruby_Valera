@@ -4,7 +4,7 @@ RSpec describe Game do
   let(:valera_dead) { Valera.new(-10, -10, -10, -10, -10) }
   let(:data) { ConfigLoader.new(valera, {}) }
   let(:game) { Game.new(valera, data) }
-#  let(:game_dead) { Game.new(valera_dead, data) }
+  let(:game_dead) { Game.new(valera_dead, data) }
 
   describe '#correct_input?' do
     context 'dead' do
