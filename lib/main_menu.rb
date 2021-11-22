@@ -1,3 +1,5 @@
+require_relative 'save_load'
+
 class MainMenu
   def initialize(character, actions)
     @character = character
