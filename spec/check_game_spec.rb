@@ -3,16 +3,11 @@ require 'rspec'
 
 RSpec.describe Game do
   let(:valera_live) { Valera.new(100, 0, 0, 0, 0) }
-  let(:valera_dead) { Valera.new(-10, -10, -10, -10, -10) }
-  let(:data) { ConfigLoader.new(valera, {}) }
+  let(:valera_dead) { Valera.new(-9, -9, -9, -9, -9) }
   let(:game) { Game.new(valera, data) }
   let(:game_dead) { Game.new(valera_dead, data) }
 
   describe '#correct_input?' do
-    context 'dead' do
-      subject { Game.new(valera_dead, data).game_run }
-      it { is_expected.to eq "\x1B[31m \nValera is dead ;-; \x1B[0m \n" }
-    end
     context 'when input is correct' do
       context 'when choose action' do
         it { expect(game.correct_input?('1')).to be_truthy }
